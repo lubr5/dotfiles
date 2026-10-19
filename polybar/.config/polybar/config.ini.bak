@@ -1,0 +1,123 @@
+[colors]
+background = #20232b
+foreground = #f425ff
+accent = #89b4fa
+muted = #777777
+
+[bar/main]
+width = 100%
+height = 30
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+font-0 = Lato:size=12;2
+font-1 = Symbols Nerd Font:size=14;3
+padding-left = 2
+padding-right = 2
+module-margin = 2
+
+modules-left = workspaces
+modules-right = wifi battery volume date
+
+wm-restack = i3
+enable-ipc = true
+
+[module/workspaces]
+type = internal/i3
+pin-workspaces = true
+show-urgent = true
+
+label-focused = %index%
+label-focused-foreground = ${colors.accent}
+label-focused-padding = 2
+
+label-unfocused = %index%
+label-unfocused-padding = 2
+
+label-visible = %index%
+label-visible-padding = 2
+
+label-urgent = %index%
+label-urgent-padding = 2
+
+[module/wifi]
+type = internal/network
+interface-type = wireless
+interval = 3
+
+format-connected = <ramp-signal> <label-connected>
+label-connected = %essid%
+
+format-disconnected = <label-disconnected>
+label-disconnected = 󰤮 Disconnected
+
+ramp-signal-0 = 󰤟
+ramp-signal-1 = 󰤢
+ramp-signal-2 = 󰤥
+ramp-signal-3 = 󰤨
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 100
+poll-interval = 5
+
+format-charging = <ramp-capacity> 󱐋 <label-charging>
+label-charging = %percentage%%
+
+format-discharging = <ramp-capacity> <label-discharging>
+label-discharging = %percentage%%
+
+format-full = <ramp-capacity> <label-full>
+label-full = %percentage%%
+
+ramp-capacity-0 = 󰁺
+ramp-capacity-1 = 󰁻
+ramp-capacity-2 = 󰁼
+ramp-capacity-3 = 󰁽
+ramp-capacity-4 = 󰁾
+ramp-capacity-5 = 󰁿
+ramp-capacity-6 = 󰂀
+ramp-capacity-7 = 󰂁
+ramp-capacity-8 = 󰂂
+ramp-capacity-9 = 󰁹
+
+[module/volume]
+type = internal/pulseaudio
+use-ui-max = false
+
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%%
+
+format-muted = <label-muted>
+label-muted = 󰝟 %percentage%%
+
+ramp-volume-0 = 󰝟
+ramp-volume-1 = 󰕿
+ramp-volume-2 = 󰕿
+ramp-volume-3 = 󰕿
+ramp-volume-4 = 󰕿
+ramp-volume-5 = 󰕿
+ramp-volume-6 = 󰕿
+ramp-volume-7 = 󰖀
+ramp-volume-8 = 󰖀
+ramp-volume-9 = 󰖀
+ramp-volume-10 = 󰖀
+ramp-volume-11 = 󰖀
+ramp-volume-12 = 󰖀
+ramp-volume-13 = 󰖀
+ramp-volume-14 = 󰕾
+ramp-volume-15 = 󰕾
+ramp-volume-16 = 󰕾
+ramp-volume-17 = 󰕾
+ramp-volume-18 = 󰕾
+ramp-volume-19 = 󰕾
+
+[module/date]
+type = custom/script
+exec = date '+%H:%M %d/%^b/%Y'
+interval = 1
+
+[settings]
+screenchange-reload = true
