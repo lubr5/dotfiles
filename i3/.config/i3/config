@@ -125,7 +125,6 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec i3-nagbar -t warning -m 'Exit i3?' -B 'Yes' 'i3-msg exit'
 
 #Startup commands
-exec --no-startup-id polybar main -c ~/.config/polybar/config.ini
 exec --no-startup-id xinput set-prop "VEN_0488:00 0488:104B Touchpad" "libinput Natural Scrolling Enabled" 1
 
 # Alt+Tab cycles through workspaces that are in use
@@ -149,3 +148,10 @@ bindsym F6 exec --no-startup-id ~/.config/i3/brightness.sh down
 bindsym F7 exec --no-startup-id ~/.config/i3/brightness.sh up
 bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/brightness.sh down
 bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/i3/brightness.sh up
+
+# Low battery popup at 10%
+exec --no-startup-id ~/.config/i3/battery-alert.sh
+
+# Display projection menu (like Windows+P / F8)
+bindsym F8 exec --no-startup-id ~/.config/i3/display-menu.sh
+bindsym XF86Display exec --no-startup-id ~/.config/i3/display-menu.sh
