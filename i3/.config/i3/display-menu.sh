@@ -26,4 +26,4 @@ case "$choice" in
   *) exit 0 ;;
 esac
 
-pkill polybar; sleep 0.5; setsid -f polybar main -c ~/.config/polybar/config.ini > /dev/null 2>&1
+setsid -f ~/.config/i3/polybar-restart.sh > /dev/null 2>&1
