@@ -155,3 +155,6 @@ exec --no-startup-id ~/.config/i3/battery-alert.sh
 # Display projection menu (like Windows+P / F8)
 bindsym F8 exec --no-startup-id ~/.config/i3/display-menu.sh
 bindsym XF86Display exec --no-startup-id ~/.config/i3/display-menu.sh
+exec --no-startup-id ~/.config/i3/dock.sh watch
+exec_always --no-startup-id sh -c 'pgrep -x polybar > /dev/null || ~/.config/i3/polybar-restart.sh'
+bindsym $mod+p exec --no-startup-id ~/.config/i3/display-menu.sh
