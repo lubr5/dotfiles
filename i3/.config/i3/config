@@ -158,3 +158,6 @@ bindsym XF86Display exec --no-startup-id ~/.config/i3/display-menu.sh
 exec --no-startup-id ~/.config/i3/dock.sh watch
 exec_always --no-startup-id sh -c 'pgrep -x polybar > /dev/null || ~/.config/i3/polybar-restart.sh'
 bindsym $mod+p exec --no-startup-id ~/.config/i3/display-menu.sh
+
+# Keep the screen awake while a browser plays audio
+exec --no-startup-id ~/.config/i3/keep-awake.sh
