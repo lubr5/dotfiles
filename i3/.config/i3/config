@@ -161,3 +161,4 @@ bindsym $mod+p exec --no-startup-id ~/.config/i3/display-menu.sh
 
 # Keep the screen awake while a browser plays audio
 exec --no-startup-id ~/.config/i3/keep-awake.sh
+bindsym XF86Calculator exec --no-startup-id gnome-calculator
