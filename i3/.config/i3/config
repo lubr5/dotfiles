@@ -132,7 +132,8 @@ bindsym Mod1+Tab workspace next
 bindsym Mod1+Shift+Tab workspace prev
 
 # Lock after 5 minutes idle (xss-lock reacts to the X screensaver timer)
-exec_always --no-startup-id xset s 300 5
+exec_always --no-startup-id xset s off
+exec --no-startup-id xautolock -time 5 -locker ~/.config/i3/lock.sh
 
 # Startup apps: terminal on workspace 1, Firefox on workspace 2
 exec --no-startup-id ~/.config/i3/startup.sh
