@@ -118,3 +118,16 @@ fi
 
 # White user@host prompt, rest of the line in the terminal's normal colour
 PS1='\[\e[97m\]\u@\h:\[\e[0m\]\w\$ '
+
+# opencode
+export PATH=/home/lucia/.opencode/bin:$PATH
+
+# down shortcut
+down() {
+    local n=${1:-1}
+    local path=""
+    for ((i=0;i<n;i++));do
+        path+="../"
+    done
+    cd "$path"
+}
