@@ -131,3 +131,4 @@ down() {
     done
     cd "$path"
 }
+alias headphones='bluetoothctl connect 90:62:3F:8F:20:92'
